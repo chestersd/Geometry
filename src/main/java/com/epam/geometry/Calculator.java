@@ -2,15 +2,18 @@ package com.epam.geometry;
 
 public class Calculator {
 
-    public boolean isBall (Ball, Point){
+    private double area;
+    private double volume;
+
+    public double calculateArea(Ball ball){
+        area = 4 * Math.PI * Math.pow(ball.getRadius(), 2);
+        return area;
 
     }
 
-    public double calculateArea(){
-
-    }
-
-    public double calculateVolume(){
+    public double calculateVolume(Ball ball){
+        volume = 4 / 3 * Math.PI * Math.pow(ball.getRadius(), 3);
+        return volume;
 
     }
 
@@ -21,6 +24,4 @@ public class Calculator {
     public double calculateRatio(){
 
     }
-
-    public
 }
