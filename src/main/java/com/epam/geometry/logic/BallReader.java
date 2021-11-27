@@ -1,4 +1,7 @@
-package com.epam.geometry;
+package com.epam.geometry.logic;
+
+import com.epam.geometry.entity.Ball;
+import com.epam.geometry.logic.BallCreator;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -27,5 +30,4 @@ public class BallReader {
             e.printStackTrace();
         }
     }
-
 }

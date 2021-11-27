@@ -1,4 +1,4 @@
-package com.epam.geometry;
+package com.epam.geometry.entity;
 
 public enum Axis {
     OX,

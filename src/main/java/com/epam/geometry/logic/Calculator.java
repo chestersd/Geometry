@@ -1,4 +1,6 @@
-package com.epam.geometry;
+package com.epam.geometry.logic;
+
+import com.epam.geometry.entity.Ball;
 
 public class Calculator {
 
