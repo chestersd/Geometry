@@ -1,33 +1,33 @@
 package com.epam.geometry.logic;
 
-import com.epam.geometry.entity.Ball;
-import com.epam.geometry.logic.BallCreator;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class BallReader {
 
     private String pathname;
 
-    public List<Ball> read(BallCreator pathname) {
+    public List<String> read(String pathName) throws DataException {
+        List<String> reader = new ArrayList<>();
         try {
-            File file = new File();
+            File file = new File(pathName);
             FileReader fileReader = new FileReader(file);
-            BufferedReader reader = new BufferedReader(fileReader);
-            String line = reader.readLine();
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+            String line = bufferedReader.readLine();
             while (line != null) {
                 System.out.println(line);
-                line = reader.readLine();
+                line = bufferedReader.readLine();
             }
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            throw new DataException("File not found", e);
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new DataException("Input/Output error", e);
         }
+        return reader;
     }
 }

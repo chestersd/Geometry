@@ -1,22 +1,18 @@
 package com.epam.geometry.logic;
 
-import com.epam.geometry.entity.Ball;
-import com.epam.geometry.entity.Point;
+//import com.epam.geometry.entity.Ball;
+//import com.epam.geometry.entity.Point;
+import java.util.regex.Pattern;
 
 public class BallValidator {
 
-    public boolean isBall (Ball, Point){
+    private static final String BALL_LINE_REGEX = "\\d+\\.\\d+( (-)?\\d+\\.\\d+){3}";
 
-        private static final String BALL_LINE_REGEX = "\\d+\\.\\d+( (-)?\\d+\\.\\d+){3}";
+    public boolean isBall(String line) {
+        return Pattern.matches(BALL_LINE_REGEX, line);
     }
-
-//    List<String> lines = dataReader.read(filePath);
-//        for (String line : line) {
-//            if (validator.isValid(line)) {
-//                Ball ball = creator.create(line);
-//                ball.add(ball);
-//                }
-//        }
-//
-//        return ball;
 }
+//    https://proselyte.net/tutorials/java-core/regular-expressions/
+
+
+
