@@ -6,7 +6,7 @@ public class DataException extends Exception {
         super();
     }
 
-    public <e> DataException(String message, e) {
+    public DataException(String message) {
         super(message);
     }
 

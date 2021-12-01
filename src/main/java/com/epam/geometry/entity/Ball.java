@@ -5,10 +5,10 @@ public class Ball {
     private Point center;
     private double radius;
 
-//    public Ball (){
-//        center = new Point();
-//        radius = 0;
-//    }
+    public Ball(int i){
+        center = new Point();
+        radius = 0;
+    }
 
     public Ball(Point center, double radius) {
         this.center = center;

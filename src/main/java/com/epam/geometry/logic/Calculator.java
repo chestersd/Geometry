@@ -7,16 +7,17 @@ import com.epam.geometry.entity.Point;
 public class Calculator {
 
     private double distance;
+//    private double area;
 
-    public double calculateArea(Ball ball){
-        private double area;
-        area = 4 * Math.PI * Math.pow(ball.getRadius(), 2);
-        return area;
+    public static double calculateArea(Ball ball){
+//        double area;
+//        area = 4 * Math.PI * Math.pow(ball.getRadius(), 2);
+        return 4 * Math.PI * Math.pow(ball.getRadius(), 2);
 
     }
 
     public double calculateVolume(Ball ball){
-        private double volume;
+        double volume;
         volume = 4 / 3 * Math.PI * Math.pow(ball.getRadius(), 3);
         return volume;
 
@@ -32,6 +33,7 @@ public class Calculator {
                 return center.getValueX();
 
         }
+        return distance;
     }
 
     public boolean isCross(Ball ball, Axis axis){
@@ -42,19 +44,18 @@ public class Calculator {
 
     }
 
-    public double calculateRatioOfValues(Ball ball, Axis axis){
-        if (isCross(ball, axis)!= 0) {
-            Point center = ball.getCenter();
-            double radius = ball.getRadius();
-            double heightOne = Math.abs(axis) - radius;
-            double heightTwo = radius - Math.abs(axis);
-            double heightOneAbs = Math.abs(heightOne);
-            double heightTwoAbs = Math.abs(heightTwo);
-            double valueOne = heightOneAbs * heightOneAbs * Math.PI / 3 * (3 * ball.getRadius() - heightOneAbs);
-            double valueTwo = heightTwoAbs * heightTwoAbs * Math.PI / 3 * (3 * ball.getRadius() - heightTwoAbs);
-        } else {
-            return 0;
-        }
-
-   }
+//    public double calculateRatioOfValues(Ball ball, Axis axis){
+//        if (isCross(ball, axis) == true) {
+//            Point center = ball.getCenter();
+//            double radius = ball.getRadius();
+//            double heightOne = Math.abs(axis) - radius;
+//            double heightTwo = radius - Math.abs(axis);
+//            double heightOneAbs = Math.abs(heightOne);
+//            double heightTwoAbs = Math.abs(heightTwo);
+//            double valueOne = heightOneAbs * heightOneAbs * Math.PI / 3 * (3 * ball.getRadius() - heightOneAbs);
+//            double valueTwo = heightTwoAbs * heightTwoAbs * Math.PI / 3 * (3 * ball.getRadius() - heightTwoAbs);
+//        } else {
+//            return 0;
+//        }
+//   }
 }
