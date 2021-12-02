@@ -2,35 +2,28 @@ package com.epam.geometry.entity;
 
 public class Ball {
 
-    private Point center;
     private double radius;
+    private Point center;
 
-    public Ball(int i){
-        center = new Point();
-        radius = 0;
-    }
+//    public Ball(int i){
+//        radius = 0;
+//        center = new Point();
+//    }
 
-    public Ball(Point center, double radius) {
-        this.center = center;
+    public Ball(double radius, Point center) {
         this.radius = radius;
+        this.center = center;
     }
 
-    public Ball(double radius, Point point) {
-    }
+//    public Ball(Point point, double radius) {
+//    }
 
     public Point getCenter() {
         return center;
     }
 
-    public void setCenter(Point center) {
-        this.center = center;
-    }
-
     public double getRadius() {
-        return radius;
+        return this.radius;
     }
 
-    public void setRadius(double radius) {
-        this.radius = radius;
-    }
 }

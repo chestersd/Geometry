@@ -7,18 +7,17 @@ import com.epam.geometry.entity.Point;
 public class Calculator {
 
     private double distance;
-//    private double area;
 
     public static double calculateArea(Ball ball){
-//        double area;
-//        area = 4 * Math.PI * Math.pow(ball.getRadius(), 2);
-        return 4 * Math.PI * Math.pow(ball.getRadius(), 2);
+        double area;
+        area = 4.0 * Math.PI * Math.pow(ball.getRadius(), 2.0);
+        return area;
 
     }
 
     public double calculateVolume(Ball ball){
         double volume;
-        volume = 4 / 3 * Math.PI * Math.pow(ball.getRadius(), 3);
+        volume = 4.0 / 3.0 * Math.PI * Math.pow(ball.getRadius(), 3);
         return volume;
 
     }
