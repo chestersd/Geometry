@@ -17,7 +17,7 @@ public class Calculator {
 
     public double calculateVolume(Ball ball){
         double volume;
-        volume = 4.0 / 3.0 * Math.PI * Math.pow(ball.getRadius(), 3);
+        volume = 4.0 / 3.0 * Math.PI * Math.pow(ball.getRadius(), 3.0);
         return volume;
 
     }
@@ -30,7 +30,6 @@ public class Calculator {
                 return center.getValueY();
             case ZY:
                 return center.getValueX();
-
         }
         return distance;
     }
@@ -40,21 +39,15 @@ public class Calculator {
         double distance = calculateDistance(axis, center);
         double radius = ball.getRadius();
         return Math.abs(distance) <= radius;
-
     }
 
-//    public double calculateRatioOfValues(Ball ball, Axis axis){
-//        if (isCross(ball, axis) == true) {
-//            Point center = ball.getCenter();
-//            double radius = ball.getRadius();
-//            double heightOne = Math.abs(axis) - radius;
-//            double heightTwo = radius - Math.abs(axis);
-//            double heightOneAbs = Math.abs(heightOne);
-//            double heightTwoAbs = Math.abs(heightTwo);
-//            double valueOne = heightOneAbs * heightOneAbs * Math.PI / 3 * (3 * ball.getRadius() - heightOneAbs);
-//            double valueTwo = heightTwoAbs * heightTwoAbs * Math.PI / 3 * (3 * ball.getRadius() - heightTwoAbs);
-//        } else {
-//            return 0;
-//        }
-//   }
+    public double calculateRatioOfVolume(Ball ball, Point point, Axis axis){
+        Point center = ball.getCenter();
+        double distance = calculateDistance(axis, center);
+        double radius = ball.getRadius();
+        double height = radius - distance;
+        double valueOfFirstSegment = Math.pow(height, 2.0) * Math.PI / 3.0 * (3.0 * radius - height);
+        double valueOfSecondSegment = calculateVolume(ball) - valueOfFirstSegment;
+        return valueOfFirstSegment / valueOfSecondSegment;
+   }
 }

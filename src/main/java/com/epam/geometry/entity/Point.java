@@ -22,26 +22,11 @@ public class Point {
         return valueX;
     }
 
-    public void setValueX(double valueX) {
-        this.valueX = valueX;
-    }
-
     public double getValueY() {
         return valueY;
-    }
-
-    public void setValueY(double valueY) {
-        this.valueY = valueY;
     }
 
     public double getValueZ() {
         return valueZ;
     }
-
-    public void setValueZ(double valueZ) {
-        this.valueZ = valueZ;
-    }
-
-
-
 }

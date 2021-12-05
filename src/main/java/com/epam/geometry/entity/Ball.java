@@ -1,22 +1,16 @@
 package com.epam.geometry.entity;
 
+import java.util.Objects;
+
 public class Ball {
 
     private double radius;
     private Point center;
 
-//    public Ball(int i){
-//        radius = 0;
-//        center = new Point();
-//    }
-
     public Ball(double radius, Point center) {
         this.radius = radius;
         this.center = center;
     }
-
-//    public Ball(Point point, double radius) {
-//    }
 
     public Point getCenter() {
         return center;
@@ -26,4 +20,16 @@ public class Ball {
         return this.radius;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Ball ball = (Ball) o;
+        return Double.compare(ball.radius, radius) == 0 && Objects.equals(center, ball.center);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(radius, center);
+    }
 }

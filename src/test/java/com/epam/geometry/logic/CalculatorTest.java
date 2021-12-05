@@ -9,7 +9,6 @@ public class CalculatorTest {
     @Test
     public void testCalculateAreaShouldCalculateAreaWhenBallIsBall(){
         //given
-//        Calculator
         Ball ball = new Ball(7.0, new Point(0.0, 0.0, 0.0));
         //when
         double area = Calculator.calculateArea(ball);
@@ -30,7 +29,7 @@ public class CalculatorTest {
     }
 
     @Test
-    public void testСalculateDistanceShouldСalculateDistanceWhenBallIsBall(){
+    public void testCalculateDistanceShouldCalculateDistanceWhenBallIsBall(){
         //given
         Calculator calculator = new Calculator();
         Axis XY;
@@ -42,14 +41,30 @@ public class CalculatorTest {
     }
 
     @Test
-    public void testIsCrossShouldReturnTrueWhenRadiusIsMoreThenDistance(){
-//        //given
-//        Calculator calculator = new Calculator();
-//        Axis XY;
-//        Point point = new Point(2.0, 7.0, 7.7);
-//        //when
-//        double distance = calculator.calculateDistance(Axis.XY, point);
-//        //then
-//        Assert.assertEquals(7.7, distance, 0.001);
+    public void testIsCrossShouldReturnTrueWhenRadiusIsMoreOrEqualsThenDistance(){
+        //given
+        Calculator calculator = new Calculator();
+        Axis ZY;
+        Point point = new Point(4.0, 7.0, 7.7);
+        Ball ball = new Ball(11.0, point);
+        double distance = calculator.calculateDistance(Axis.ZY, point);
+        boolean isCross;
+        //when
+        isCross = calculator.isCross(ball, Axis.ZY);
+        //then
+        Assert.assertTrue(isCross);
+    }
+
+    @Test
+    public void testCalculateRatioOfVolumeShouldCalculateRatioOfVolumeWhenBallCrossAxis(){
+        //given
+        Calculator calculator = new Calculator();
+        Axis XY;
+        Point point = new Point(14.0, 13.0, 2.0);
+        Ball ball = new Ball(15.0, point);
+        //when
+        double ratio = calculator.calculateRatioOfVolume(ball, point, Axis.XY);
+        //then
+        Assert.assertEquals(0.668,ratio, 0.001);
     }
 }

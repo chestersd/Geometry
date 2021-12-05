@@ -3,11 +3,14 @@ package com.epam.geometry.logic;
 import com.epam.geometry.entity.Ball;
 import com.epam.geometry.entity.Point;
 
+import java.util.logging.LogManager;
+import java.util.logging.Logger;
+
 public class BallCreator {
 
-    private static final String SPLITTER = " ";
+    private static final Logger LOGGER = LogManager.
 
-    private String pathname;
+    private static final String SPLITTER = " ";
 
     public Ball createBall(String line){
         String[] splitLines = line.split(SPLITTER);
@@ -15,12 +18,10 @@ public class BallCreator {
         double valueX = Double.parseDouble(splitLines[1]);
         double valueY = Double.parseDouble(splitLines[2]);
         double valueZ = Double.parseDouble(splitLines[3]);
-        return new Ball (radius, new Point(valueX, valueY, valueZ));
-
+        Point point = new Point();
+        Ball createdBall = new Ball(radius, point);
+        return createdBall;
     }
-
-
-
 }
 
 
