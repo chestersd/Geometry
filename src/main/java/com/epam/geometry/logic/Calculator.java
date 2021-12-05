@@ -15,8 +15,8 @@ public class Calculator {
     public static double calculateArea(Ball ball){
         LOGGER.info("Start calculating of the area " + ball.toString());
         double area;
-        LOGGER.info("Calculate the area of " + ball + ": " + area);
         area = 4.0 * Math.PI * Math.pow(ball.getRadius(), 2.0);
+        LOGGER.info("Calculate the area of " + ball + ": " + area);
         return area;
 
     }
@@ -24,8 +24,8 @@ public class Calculator {
     public double calculateVolume(Ball ball){
         LOGGER.info("Start calculating of the volume " + ball.toString());
         double volume;
-        LOGGER.info("Calculate the volume of " + ball + ": " + volume);
         volume = 4.0 / 3.0 * Math.PI * Math.pow(ball.getRadius(), 3.0);
+        LOGGER.info("Calculate the volume of " + ball + ": " + volume);
         return volume;
 
     }
@@ -50,7 +50,8 @@ public class Calculator {
         double distance = calculateDistance(axis, center);
         double radius = ball.getRadius();
         LOGGER.info("Defined the crossing of " + ball + ": " + axis);
-        return Math.abs(distance) <= radius;
+        boolean isCross = Math.abs(distance) <= radius;
+        return isCross;
     }
 
     public double calculateRatioOfVolume(Ball ball, Point point, Axis axis){

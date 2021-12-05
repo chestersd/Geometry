@@ -2,17 +2,17 @@ package com.epam.geometry.logic;
 
 import com.epam.geometry.entity.Ball;
 import com.epam.geometry.entity.Point;
-
-import java.util.logging.LogManager;
-import java.util.logging.Logger;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 public class BallCreator {
 
-    private static final Logger LOGGER = LogManager.
+    private static final Logger LOGGER = LogManager.getLogger(BallCreator.class);
 
     private static final String SPLITTER = " ";
 
     public Ball createBall(String line){
+        LOGGER.info("Start of creating a ball");
         String[] splitLines = line.split(SPLITTER);
         double radius = Double.parseDouble(splitLines[0]);
         double valueX = Double.parseDouble(splitLines[1]);
