@@ -1,0 +1,5 @@
+[main] INFO  com.epam.geometry.logic.BallReader  - Started reading data from null
+[main] INFO  com.epam.geometry.logic.BallReader  - Started reading data from null
+[main] INFO  com.epam.geometry.logic.BallReader  - Started reading data from null
+[main] INFO  com.epam.geometry.logic.BallReader  - Started reading data from null
+[main] ERROR com.epam.geometry.logic.BallReader  - Caught java.io.FileNotFoundException: src\test\resources\BALLS (Не удается найти указанный файл)
