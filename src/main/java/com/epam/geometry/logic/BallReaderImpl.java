@@ -16,7 +16,7 @@ public class BallReaderImpl implements BallReader{
     private String pathName;
 
     public List<String> read(String pathName) throws DataException {
-    LOGGER.info("Started reading data from " + pathname);
+    LOGGER.info("Started reading data from " + pathName);
     List<String> reader = new ArrayList<>();
     try {
          File file = new File(pathName);
