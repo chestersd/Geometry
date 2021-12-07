@@ -17,7 +17,7 @@ public class BallReaderImpl implements BallReader{
 
     public List<String> read(String pathName) throws DataException {
     LOGGER.info("Started reading data from " + pathName);
-    List<String> reader = new ArrayList<>();
+    List<String> read = new ArrayList<>();
     try {
          File file = new File(pathName);
          FileReader fileReader = new FileReader(file);
@@ -34,6 +34,6 @@ public class BallReaderImpl implements BallReader{
             LOGGER.error("Caught " + e);
             throw new DataException("Input/Output error", e);
          }
-         return reader;
+         return read;
     }
 }
