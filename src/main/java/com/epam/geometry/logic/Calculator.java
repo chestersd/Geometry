@@ -12,7 +12,7 @@ public class Calculator {
 
     private double distance;
 
-    public static double calculateArea(Ball ball){
+    public double calculateArea(Ball ball){
         LOGGER.info("Start calculating of the area " + ball.toString());
         double area;
         area = 4.0 * Math.PI * Math.pow(ball.getRadius(), 2.0);

@@ -1,5 +1,7 @@
 package com.epam.geometry.entity;
 
+import com.epam.geometry.logic.DataException;
+
 public class Point {
 
     private double valueX;
@@ -28,5 +30,17 @@ public class Point {
 
     public double getValueZ() {
         return valueZ;
+    }
+
+    public void setValueX(double valueX) throws DataException {
+        this.valueX = valueX;
+    }
+
+    public void setValueY(double valueY) throws DataException {
+        this.valueY = valueY;
+    }
+
+    public void setValueZ(double valueZ) throws DataException {
+        this.valueZ = valueZ;
     }
 }
