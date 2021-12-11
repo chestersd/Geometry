@@ -14,7 +14,7 @@ public class BallStore extends Ball implements Observable {
 
     private final Map<Integer, Parameters> parameters = new HashMap<>();
 
-//    private Integer id;
+    private Integer id;
 
     private static Calculator calculator = new Calculator();
     private static BallStore instance;
