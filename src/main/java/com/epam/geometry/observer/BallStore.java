@@ -37,7 +37,7 @@ public class BallStore extends Ball implements Observable {
         parameters.put(ball.getId(), new Parameters(area, volume));
     }
 
-    public Map<Integer, Parameters> getParameters(){
+    public static Map<Integer, Parameters> getParameters(){
         return parameters;
     }
 

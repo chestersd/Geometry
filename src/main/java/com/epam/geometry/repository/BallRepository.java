@@ -8,6 +8,6 @@ public interface BallRepository {
     void delete(BallIdentifiable ball);
     void update(BallIdentifiable ball);
 
-    List<BallIdentifiable> query(final Specification specification) throws DataException;
+    List<BallIdentifiable> query(Specification specification) throws DataException;
     List<BallIdentifiable> sort(BallComparator<BallIdentifiable> comparator) throws DataException;
 }
